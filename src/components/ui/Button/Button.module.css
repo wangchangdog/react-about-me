@@ -335,7 +335,7 @@
 	background: linear-gradient(90deg, #ff0080, #40e0d0, #ffd700, #ff0080);
 	background-size: 200% 100%;
 	animation: gaming-underline-flow 2s ease-in-out infinite;
-	transition: width var(--transition-base);
+	transition: width 0.8s ease-out;
 }
 
 .gaming-button:hover .button__text::after {
