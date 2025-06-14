@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Button } from '../../components/ui/Button/Button'
-import './Portfolio.css'
+import styles from './Portfolio.module.css'
 
 export const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('all')
@@ -73,22 +73,22 @@ export const Portfolio = () => {
     : projects.filter(project => project.category === activeFilter)
 
   return (
-    <div className="portfolio">
-      <section className="portfolio-hero">
+    <div className={styles.portfolio}>
+      <section className={styles['portfolio-hero']}>
         <div className="container">
-          <div className="portfolio-hero__content">
-            <h1 className="portfolio-hero__title">ポートフォリオ</h1>
-            <p className="portfolio-hero__subtitle">
+          <div className={styles['portfolio-hero__content']}>
+            <h1 className={styles['portfolio-hero__title']}>ポートフォリオ</h1>
+            <p className={styles['portfolio-hero__subtitle']}>
               これまでに制作したプロジェクトをご紹介します。
             </p>
           </div>
         </div>
       </section>
 
-      <section className="portfolio-content">
+      <section className={styles['portfolio-content']}>
         <div className="container">
           {/* Filter */}
-          <div className="portfolio-filter">
+          <div className={styles['portfolio-filter']}>
             <button
               className={`filter-button ${activeFilter === 'all' ? 'filter-button--active' : ''}`}
               onClick={() => setActiveFilter('all')}
@@ -110,15 +110,15 @@ export const Portfolio = () => {
           </div>
 
           {/* Projects Grid */}
-          <div className="projects-grid">
+          <div className={styles['projects-grid']}>
             {filteredProjects.map(project => (
-              <div key={project.id} className="project-card">
-                <div className="project-card__image">
-                  <div className="project-card__placeholder">
+              <div key={project.id} className={styles['project-card']}>
+                <div className={styles['project-card__image']}>
+                  <div className={styles['project-card__placeholder']}>
                     Project Image
                   </div>
-                  <div className="project-card__overlay">
-                    <div className="project-card__actions">
+                  <div className={styles['project-card__overlay']}>
+                    <div className={styles['project-card__actions']}>
                       <Button variant="outline" size="sm" href={project.demoUrl}>
                         Demo
                       </Button>
@@ -129,13 +129,13 @@ export const Portfolio = () => {
                   </div>
                 </div>
 
-                <div className="project-card__content">
-                  <h3 className="project-card__title">{project.title}</h3>
-                  <p className="project-card__description">{project.description}</p>
+                <div className={styles['project-card__content']}>
+                  <h3 className={styles['project-card__title']}>{project.title}</h3>
+                  <p className={styles['project-card__description']}>{project.description}</p>
 
-                  <div className="project-card__technologies">
+                  <div className={styles['project-card__technologies']}>
                     {project.technologies.map(tech => (
-                      <span key={tech} className="technology-tag">{tech}</span>
+                      <span key={tech} className={styles['technology-tag']}>{tech}</span>
                     ))}
                   </div>
                 </div>
@@ -144,7 +144,7 @@ export const Portfolio = () => {
           </div>
 
           {filteredProjects.length === 0 && (
-            <div className="no-projects">
+            <div className={styles['no-projects']}>
               <p>該当するプロジェクトが見つかりませんでした。</p>
             </div>
           )}

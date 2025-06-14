@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ThemeToggle } from '../../ui/ThemeToggle/ThemeToggle'
-import './Header.css'
+import styles from './Header.module.css'
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -11,52 +11,52 @@ export const Header = () => {
   }
 
   return (
-    <header className="header">
+    <header className={styles.header}>
       <div className="container">
-        <div className="header__content">
-          <Link to="/" className="header__logo">
-            <span className="header__logo-text">Portfolio</span>
+        <div className={styles.header__content}>
+          <Link to="/" className={styles.header__logo}>
+            <span className={styles['header__logo-text']}>Portfolio</span>
           </Link>
 
-          <nav className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`}>
-            <ul className="header__nav-list">
-              <li className="header__nav-item">
-                <Link to="/" className="header__nav-link" onClick={() => setIsMenuOpen(false)}>
+          <nav className={`${styles.header__nav} ${isMenuOpen ? styles['header__nav--open'] : ''}`}>
+            <ul className={styles['header__nav-list']}>
+              <li className={styles['header__nav-item']}>
+                <Link to="/" className={styles['header__nav-link']} onClick={() => setIsMenuOpen(false)}>
                   Home
                 </Link>
               </li>
-              <li className="header__nav-item">
-                <Link to="/about" className="header__nav-link" onClick={() => setIsMenuOpen(false)}>
+              <li className={styles['header__nav-item']}>
+                <Link to="/about" className={styles['header__nav-link']} onClick={() => setIsMenuOpen(false)}>
                   About
                 </Link>
               </li>
-              <li className="header__nav-item">
-                <Link to="/portfolio" className="header__nav-link" onClick={() => setIsMenuOpen(false)}>
+              <li className={styles['header__nav-item']}>
+                <Link to="/portfolio" className={styles['header__nav-link']} onClick={() => setIsMenuOpen(false)}>
                   Portfolio
                 </Link>
               </li>
-              <li className="header__nav-item">
-                <Link to="/blog" className="header__nav-link" onClick={() => setIsMenuOpen(false)}>
+              <li className={styles['header__nav-item']}>
+                <Link to="/blog" className={styles['header__nav-link']} onClick={() => setIsMenuOpen(false)}>
                   Blog
                 </Link>
               </li>
-              <li className="header__nav-item">
-                <Link to="/contact" className="header__nav-link" onClick={() => setIsMenuOpen(false)}>
+              <li className={styles['header__nav-item']}>
+                <Link to="/contact" className={styles['header__nav-link']} onClick={() => setIsMenuOpen(false)}>
                   Contact
                 </Link>
               </li>
             </ul>
-            <div className="header__actions">
+            <div className={styles.header__actions}>
               <ThemeToggle />
             </div>
           </nav>
 
           <button
-            className="header__menu-button"
+            className={styles['header__menu-button']}
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
-            <span className={`header__menu-icon ${isMenuOpen ? 'header__menu-icon--open' : ''}`}>
+            <span className={`${styles['header__menu-icon']} ${isMenuOpen ? styles['header__menu-icon--open'] : ''}`}>
               <span></span>
               <span></span>
               <span></span>

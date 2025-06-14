@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './Button.css'
+import styles from './Button.module.css'
 
 interface ButtonProps {
   children: React.ReactNode
@@ -25,11 +25,11 @@ export const Button: React.FC<ButtonProps> = ({
   type = 'button',
   className = '',
 }) => {
-  const baseClasses = 'button'
-  const variantClass = `button--${variant}`
-  const sizeClass = `button--${size}`
-  const disabledClass = disabled || loading ? 'button--disabled' : ''
-  const loadingClass = loading ? 'button--loading' : ''
+  const baseClasses = styles.button
+  const variantClass = styles[`button--${variant}`] || ''
+  const sizeClass = styles[`button--${size}`] || ''
+  const disabledClass = disabled || loading ? styles['button--disabled'] || '' : ''
+  const loadingClass = loading ? styles['button--loading'] || '' : ''
 
   const classes = [
     baseClasses,
@@ -42,8 +42,8 @@ export const Button: React.FC<ButtonProps> = ({
 
   const buttonContent = (
     <>
-      {loading && <span className="button__spinner"></span>}
-      <span className={`button__content ${loading ? 'button__content--hidden' : ''}`}>
+      {loading && <span className={styles.button__spinner}></span>}
+      <span className={`${styles.button__content} ${loading ? styles['button__content--hidden'] : ''}`}>
         {children}
       </span>
     </>

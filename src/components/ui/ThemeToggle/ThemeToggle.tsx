@@ -1,5 +1,5 @@
 import { useTheme } from '../../../hooks/useTheme'
-import './ThemeToggle.css'
+import styles from './ThemeToggle.module.css'
 
 export const ThemeToggle = () => {
   const { theme, resolvedTheme, setTheme } = useTheme()
@@ -38,19 +38,19 @@ export const ThemeToggle = () => {
   }
 
   return (
-    <div className="theme-toggle">
+    <div className={styles['theme-toggle']}>
       <button
-        className="theme-toggle__button"
+        className={styles['theme-toggle__button']}
         onClick={handleToggle}
         aria-label={`現在: ${getLabel()}。クリックして切り替え`}
         title={getLabel()}
       >
-        <span className="theme-toggle__icon" role="img" aria-hidden="true">
+        <span className={styles['theme-toggle__icon']} role="img" aria-hidden="true">
           {getIcon()}
         </span>
-        <span className="theme-toggle__indicator">
+        <span className={styles['theme-toggle__indicator']}>
           <span
-            className={`theme-toggle__dot theme-toggle__dot--${resolvedTheme}`}
+            className={`${styles['theme-toggle__dot']} ${styles[`theme-toggle__dot--${resolvedTheme}`]}`}
           />
         </span>
       </button>

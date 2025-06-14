@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './Blog.css'
+import styles from './Blog.module.css'
 
 export const Blog = () => {
   const [activeCategory, setActiveCategory] = useState('all')
@@ -66,22 +66,22 @@ export const Blog = () => {
     : blogPosts.filter(post => post.category === activeCategory)
 
   return (
-    <div className="blog">
-      <section className="blog-hero">
+    <div className={styles.blog}>
+      <section className={styles['blog-hero']}>
         <div className="container">
-          <div className="blog-hero__content">
-            <h1 className="blog-hero__title">ブログ</h1>
-            <p className="blog-hero__subtitle">
+          <div className={styles['blog-hero__content']}>
+            <h1 className={styles['blog-hero__title']}>ブログ</h1>
+            <p className={styles['blog-hero__subtitle']}>
               Web開発に関する技術記事や学んだことを発信しています。
             </p>
           </div>
         </div>
       </section>
 
-      <section className="blog-content">
+      <section className={styles['blog-content']}>
         <div className="container">
           {/* Category Filter */}
-          <div className="blog-filter">
+          <div className={styles['blog-filter']}>
             <button
               className={`filter-button ${activeCategory === 'all' ? 'filter-button--active' : ''}`}
               onClick={() => setActiveCategory('all')}
@@ -109,33 +109,33 @@ export const Blog = () => {
           </div>
 
           {/* Blog Posts Grid */}
-          <div className="blog-posts">
+          <div className={styles['blog-posts']}>
             {filteredPosts.map(post => (
-              <article key={post.id} className="blog-post">
-                <div className="blog-post__image">
-                  <div className="blog-post__placeholder">Blog Image</div>
-                  <div className="blog-post__category">
+              <article key={post.id} className={styles['blog-post']}>
+                <div className={styles['blog-post__image']}>
+                  <div className={styles['blog-post__placeholder']}>Blog Image</div>
+                  <div className={styles['blog-post__category']}>
                     {post.category === 'tech' && '技術'}
                     {post.category === 'design' && 'デザイン'}
                     {post.category === 'workflow' && 'ワークフロー'}
                   </div>
                 </div>
 
-                <div className="blog-post__content">
-                  <div className="blog-post__meta">
-                    <span className="blog-post__date">{post.date}</span>
-                    <span className="blog-post__read-time">{post.readTime}で読める</span>
+                <div className={styles['blog-post__content']}>
+                  <div className={styles['blog-post__meta']}>
+                    <span className={styles['blog-post__date']}>{post.date}</span>
+                    <span className={styles['blog-post__read-time']}>{post.readTime}で読める</span>
                   </div>
 
-                  <h2 className="blog-post__title">
-                    <a href={`/blog/${post.id}`} className="blog-post__link">
+                  <h2 className={styles['blog-post__title']}>
+                    <a href={`/blog/${post.id}`} className={styles['blog-post__link']}>
                       {post.title}
                     </a>
                   </h2>
 
-                  <p className="blog-post__excerpt">{post.excerpt}</p>
+                  <p className={styles['blog-post__excerpt']}>{post.excerpt}</p>
 
-                  <a href={`/blog/${post.id}`} className="blog-post__read-more">
+                  <a href={`/blog/${post.id}`} className={styles['blog-post__read-more']}>
                     続きを読む →
                   </a>
                 </div>
@@ -144,7 +144,7 @@ export const Blog = () => {
           </div>
 
           {filteredPosts.length === 0 && (
-            <div className="no-posts">
+            <div className={styles['no-posts']}>
               <p>該当する記事が見つかりませんでした。</p>
             </div>
           )}
