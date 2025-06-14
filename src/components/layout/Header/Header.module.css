@@ -146,7 +146,7 @@
 /* Desktop Styles */
 @media (min-width: 768px) {
 	.header__nav {
-		display: block;
+		display: flex;
 	}
 
 	.header__menu-button {

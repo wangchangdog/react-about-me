@@ -103,6 +103,13 @@
 	pointer-events: none;
 }
 
+.button__content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-2);
+}
+
 .button__spinner {
 	width: 16px;
 	height: 16px;
@@ -246,7 +253,7 @@
 }
 
 .gaming-button::before {
-	content: '';
+	content: "";
 	position: absolute;
 	top: -2px;
 	left: -2px;
@@ -270,7 +277,7 @@
 }
 
 .gaming-button::after {
-	content: '';
+	content: "";
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -286,18 +293,15 @@
 }
 
 .gaming-button:hover {
-	box-shadow: 
-		0 0 20px rgba(255, 0, 128, 0.3),
-		0 0 40px rgba(64, 224, 208, 0.2),
+	box-shadow: 0 0 20px rgba(255, 0, 128, 0.3), 0 0 40px rgba(64, 224, 208, 0.2),
 		0 0 60px rgba(255, 212, 0, 0.1);
 	transform: translateY(-2px);
+	text-decoration: none;
 }
 
 .gaming-button:active {
 	transform: translateY(0);
-	box-shadow: 
-		0 0 15px rgba(255, 0, 128, 0.4),
-		0 0 30px rgba(64, 224, 208, 0.3);
+	box-shadow: 0 0 15px rgba(255, 0, 128, 0.4), 0 0 30px rgba(64, 224, 208, 0.3);
 }
 
 @keyframes gaming-border-spin {
@@ -318,6 +322,25 @@
 	-webkit-text-fill-color: transparent;
 	animation: gaming-text-glow 3s ease-in-out infinite alternate;
 	font-weight: var(--font-semibold);
+	position: relative;
+}
+
+.gaming-button .button__text::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -2px;
+	width: 0;
+	height: 2px;
+	background: linear-gradient(90deg, #ff0080, #40e0d0, #ffd700, #ff0080);
+	background-size: 200% 100%;
+	animation: gaming-underline-flow 2s ease-in-out infinite;
+	transition: width var(--transition-base);
+}
+
+.gaming-button:hover .button__text::after {
+	width: 100%;
+	animation: gaming-underline-glow 1s ease-in-out infinite alternate;
 }
 
 @keyframes gaming-text-glow {
@@ -331,6 +354,26 @@
 	}
 }
 
+@keyframes gaming-underline-flow {
+	0% {
+		background-position: -200% 0%;
+	}
+	100% {
+		background-position: 200% 0%;
+	}
+}
+
+@keyframes gaming-underline-glow {
+	0% {
+		box-shadow: 0 0 5px rgba(255, 0, 128, 0.8), 0 0 10px rgba(64, 224, 208, 0.6);
+		filter: brightness(1);
+	}
+	100% {
+		box-shadow: 0 0 10px rgba(255, 212, 0, 0.9), 0 0 15px rgba(255, 0, 128, 0.7);
+		filter: brightness(1.2);
+	}
+}
+
 /* Dark mode adjustments for gaming button */
 [data-theme="dark"] .gaming-button::after {
 	background: var(--theme-bg-primary);
@@ -341,15 +384,19 @@
 	.gaming-button::before {
 		animation-duration: 6s;
 	}
-	
+
 	.gaming-button:hover::before {
 		animation-duration: 4s;
 	}
-	
+
 	.gaming-button .button__text {
 		animation: none;
 		background: var(--theme-text-primary);
 		-webkit-text-fill-color: var(--theme-text-primary);
+	}
+
+	.gaming-button .button__text::after {
+		display: none;
 	}
 }
 

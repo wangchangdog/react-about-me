@@ -45,9 +45,13 @@ export const Button: React.FC<ButtonProps> = ({
     <>
       {loading && <span className={styles.button__spinner}></span>}
       <span className={`${styles.button__content} ${loading ? styles['button__content--hidden'] : ''}`}>
-        <span className={variant === 'gaming' ? styles.button__text : ''}>
-        {children}
-      </span>
+        {variant === 'gaming' ? (
+          <span className={styles.button__text}>
+            {children}
+          </span>
+        ) : (
+          children
+        )}
       </span>
     </>
   )
