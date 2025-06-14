@@ -1,0 +1,238 @@
+/* About Page Styles */
+
+/* Profile Section */
+.profile {
+	padding: var(--space-20) 0;
+	background-color: var(--color-gray-50);
+}
+
+.profile__content {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--space-12);
+	align-items: center;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+	.profile__content {
+		grid-template-columns: 300px 1fr;
+		gap: var(--space-16);
+	}
+}
+
+.profile__image {
+	justify-self: center;
+}
+
+.profile__image-placeholder {
+	width: 250px;
+	height: 250px;
+	background: linear-gradient(
+		45deg,
+		var(--color-primary),
+		var(--color-secondary)
+	);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--color-white);
+	font-weight: var(--font-medium);
+	box-shadow: var(--shadow-xl);
+}
+
+.profile__info {
+	text-align: center;
+}
+
+@media (min-width: 768px) {
+	.profile__info {
+		text-align: left;
+	}
+}
+
+.profile__title {
+	font-size: var(--text-4xl);
+	font-weight: var(--font-bold);
+	color: var(--color-gray-900);
+	margin-bottom: var(--space-3);
+}
+
+.profile__subtitle {
+	font-size: var(--text-xl);
+	font-weight: var(--font-medium);
+	color: var(--color-primary);
+	margin-bottom: var(--space-6);
+}
+
+.profile__description {
+	font-size: var(--text-lg);
+	line-height: var(--leading-relaxed);
+	color: var(--color-gray-600);
+}
+
+/* Skills Section */
+.skills {
+	padding: var(--space-20) 0;
+}
+
+.skills__grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--space-12);
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+	.skills__grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.skill-category {
+	background: var(--color-white);
+	padding: var(--space-8);
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow-md);
+}
+
+.skill-category__title {
+	font-size: var(--text-xl);
+	font-weight: var(--font-semibold);
+	color: var(--color-gray-900);
+	margin-bottom: var(--space-6);
+	text-align: center;
+}
+
+.skill-category__items {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-4);
+}
+
+.skill-item {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-2);
+}
+
+.skill-item__name {
+	font-size: var(--text-base);
+	font-weight: var(--font-medium);
+	color: var(--color-gray-700);
+}
+
+.skill-item__bar {
+	width: 100%;
+	height: 8px;
+	background-color: var(--color-gray-200);
+	border-radius: var(--radius-full);
+	overflow: hidden;
+}
+
+.skill-item__progress {
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		var(--color-primary),
+		var(--color-secondary)
+	);
+	border-radius: var(--radius-full);
+	transition: width var(--transition-slow);
+}
+
+/* Timeline Section */
+.timeline {
+	padding: var(--space-20) 0;
+	background-color: var(--color-gray-50);
+}
+
+.timeline__content {
+	max-width: 700px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.timeline__content::before {
+	content: "";
+	position: absolute;
+	left: 30px;
+	top: 0;
+	bottom: 0;
+	width: 2px;
+	background-color: var(--color-primary);
+}
+
+@media (min-width: 768px) {
+	.timeline__content::before {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+.timeline-item {
+	position: relative;
+	margin-bottom: var(--space-12);
+	padding-left: var(--space-16);
+}
+
+@media (min-width: 768px) {
+	.timeline-item {
+		width: 50%;
+		padding-left: 0;
+		padding-right: var(--space-8);
+	}
+
+	.timeline-item:nth-child(even) {
+		margin-left: 50%;
+		padding-right: 0;
+		padding-left: var(--space-8);
+	}
+}
+
+.timeline-item::before {
+	content: "";
+	position: absolute;
+	left: 22px;
+	top: 8px;
+	width: 16px;
+	height: 16px;
+	background-color: var(--color-primary);
+	border: 4px solid var(--color-white);
+	border-radius: 50%;
+	box-shadow: var(--shadow-md);
+}
+
+@media (min-width: 768px) {
+	.timeline-item::before {
+		right: -8px;
+		left: auto;
+	}
+
+	.timeline-item:nth-child(even)::before {
+		left: -8px;
+		right: auto;
+	}
+}
+
+.timeline-item__date {
+	font-size: var(--text-sm);
+	font-weight: var(--font-bold);
+	color: var(--color-primary);
+	margin-bottom: var(--space-2);
+}
+
+.timeline-item__title {
+	font-size: var(--text-lg);
+	font-weight: var(--font-semibold);
+	color: var(--color-gray-900);
+	margin-bottom: var(--space-3);
+}
+
+.timeline-item__description {
+	color: var(--color-gray-600);
+	line-height: var(--leading-relaxed);
+}

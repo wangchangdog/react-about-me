@@ -1,0 +1,128 @@
+/* Media Queries */
+
+/* Mobile First Approach */
+/* Base styles are for mobile (0px and up) */
+
+/* Small devices (640px and up) */
+@media (min-width: 640px) {
+	.container {
+		max-width: var(--container-sm);
+	}
+
+	.hero-title {
+		font-size: var(--text-4xl);
+	}
+}
+
+/* Medium devices (768px and up) */
+@media (min-width: 768px) {
+	.container {
+		max-width: var(--container-md);
+	}
+
+	.hero-title {
+		font-size: var(--text-5xl);
+	}
+
+	.section {
+		padding: var(--space-24) 0;
+	}
+}
+
+/* Large devices (1024px and up) */
+@media (min-width: 1024px) {
+	.container {
+		max-width: var(--container-lg);
+	}
+
+	.hero-title {
+		font-size: var(--text-6xl);
+	}
+
+	.section {
+		padding: var(--space-32) 0;
+	}
+}
+
+/* Extra large devices (1280px and up) */
+@media (min-width: 1280px) {
+	.container {
+		max-width: var(--container-xl);
+	}
+}
+
+/* 2X Large devices (1536px and up) */
+@media (min-width: 1536px) {
+	.container {
+		max-width: var(--container-2xl);
+	}
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 1023px) {
+	.tablet-only {
+		display: block;
+	}
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+	.mobile-only {
+		display: block;
+	}
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+	.desktop-only {
+		display: block;
+	}
+}
+
+/* Print styles */
+@media print {
+	.no-print {
+		display: none !important;
+	}
+
+	.print-only {
+		display: block !important;
+	}
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+	:root {
+		--shadow-sm: none;
+		--shadow-base: none;
+		--shadow-md: 0 0 0 1px var(--color-gray-900);
+		--shadow-lg: 0 0 0 2px var(--color-gray-900);
+		--shadow-xl: 0 0 0 3px var(--color-gray-900);
+	}
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-background: var(--color-gray-900);
+		--color-text: var(--color-gray-100);
+		--color-border: var(--color-gray-700);
+	}
+
+	body {
+		background-color: var(--color-background);
+		color: var(--color-text);
+	}
+}
