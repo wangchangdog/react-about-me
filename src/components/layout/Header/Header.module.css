@@ -6,10 +6,10 @@
 	left: 0;
 	right: 0;
 	z-index: var(--z-index-fixed);
-	background-color: var(--color-white);
-	border-bottom: var(--border-1) solid var(--color-gray-200);
+	background: var(--theme-nav-bg);
+	border-bottom: var(--border-1) solid var(--theme-border-primary);
 	backdrop-filter: blur(10px);
-	background-color: rgba(255, 255, 255, 0.95);
+	transition: all var(--transition-base);
 }
 
 .header__content {
@@ -51,14 +51,14 @@
 
 .header__nav-link {
 	text-decoration: none;
-	color: var(--color-gray-700);
+	color: var(--theme-nav-link);
 	font-weight: var(--font-medium);
 	transition: color var(--transition-base);
 	position: relative;
 }
 
 .header__nav-link:hover {
-	color: var(--color-primary);
+	color: var(--theme-nav-link-hover);
 }
 
 .header__nav-link::after {

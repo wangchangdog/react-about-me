@@ -235,6 +235,124 @@
 	color: var(--color-white);
 }
 
+/* Gaming Button Styles */
+.gaming-button {
+	position: relative;
+	background: var(--theme-bg-primary);
+	border: 2px solid transparent;
+	background-clip: padding-box;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.gaming-button::before {
+	content: '';
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	right: -2px;
+	bottom: -2px;
+	background: conic-gradient(
+		from 0deg,
+		#ff0080,
+		#ff8c00,
+		#40e0d0,
+		#da70d6,
+		#00ff7f,
+		#ffd700,
+		#ff1493,
+		#00bfff,
+		#ff0080
+	);
+	border-radius: inherit;
+	animation: gaming-border-spin 4s linear infinite;
+	z-index: -1;
+}
+
+.gaming-button::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: var(--theme-bg-primary);
+	border-radius: calc(var(--radius-md) - 2px);
+	z-index: -1;
+}
+
+.gaming-button:hover::before {
+	animation-duration: 2s;
+}
+
+.gaming-button:hover {
+	box-shadow: 
+		0 0 20px rgba(255, 0, 128, 0.3),
+		0 0 40px rgba(64, 224, 208, 0.2),
+		0 0 60px rgba(255, 212, 0, 0.1);
+	transform: translateY(-2px);
+}
+
+.gaming-button:active {
+	transform: translateY(0);
+	box-shadow: 
+		0 0 15px rgba(255, 0, 128, 0.4),
+		0 0 30px rgba(64, 224, 208, 0.3);
+}
+
+@keyframes gaming-border-spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* Gaming button text effects */
+.gaming-button .button__text {
+	background: linear-gradient(45deg, #ff0080, #40e0d0, #ffd700);
+	background-size: 200% 200%;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: gaming-text-glow 3s ease-in-out infinite alternate;
+	font-weight: var(--font-semibold);
+}
+
+@keyframes gaming-text-glow {
+	0% {
+		background-position: 0% 50%;
+		filter: drop-shadow(0 0 5px rgba(255, 0, 128, 0.5));
+	}
+	100% {
+		background-position: 100% 50%;
+		filter: drop-shadow(0 0 10px rgba(64, 224, 208, 0.5));
+	}
+}
+
+/* Dark mode adjustments for gaming button */
+[data-theme="dark"] .gaming-button::after {
+	background: var(--theme-bg-primary);
+}
+
+/* Disable gaming effects on mobile for performance */
+@media (max-width: 768px) {
+	.gaming-button::before {
+		animation-duration: 6s;
+	}
+	
+	.gaming-button:hover::before {
+		animation-duration: 4s;
+	}
+	
+	.gaming-button .button__text {
+		animation: none;
+		background: var(--theme-text-primary);
+		-webkit-text-fill-color: var(--theme-text-primary);
+	}
+}
+
 /* Responsive adjustments */
 @media (max-width: 767px) {
 	.button--lg {
@@ -242,4 +360,20 @@
 		font-size: var(--text-base);
 		min-height: 48px;
 	}
+}
+
+/* Gaming button variant styles */
+.button--gaming {
+	background: var(--theme-bg-primary);
+	color: var(--theme-text-primary);
+	border: 2px solid transparent;
+	position: relative;
+	overflow: hidden;
+	font-weight: var(--font-semibold);
+}
+
+.button--gaming:hover:not(:disabled) {
+	background: var(--theme-bg-primary);
+	color: var(--theme-text-primary);
+	transform: translateY(-2px);
 }

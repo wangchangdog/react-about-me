@@ -15,7 +15,7 @@ export const Home = () => {
               フロントエンド開発者として、美しく機能的なWebサイトを制作しています。
             </p>
             <div className={styles.hero__actions}>
-              <Button variant="primary" size="lg" href="/portfolio">
+              <Button variant="gaming" size="lg" href="/portfolio">
                 ポートフォリオを見る
               </Button>
               <Button variant="outline" size="lg" href="/contact">
