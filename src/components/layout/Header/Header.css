@@ -34,6 +34,7 @@
 /* Navigation */
 .header__nav {
 	display: none;
+	align-items: center;
 }
 
 .header__nav-list {
@@ -73,6 +74,14 @@
 
 .header__nav-link:hover::after {
 	width: 100%;
+}
+
+/* Actions section for theme toggle and other controls */
+.header__actions {
+	display: flex;
+	align-items: center;
+	gap: var(--space-4);
+	margin-left: var(--space-6);
 }
 
 /* Mobile Menu Button */

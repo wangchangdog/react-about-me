@@ -4,7 +4,7 @@ import './Button.css'
 
 interface ButtonProps {
   children: React.ReactNode
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost'
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'gaming' | 'gaming-glow'
   size?: 'sm' | 'md' | 'lg'
   disabled?: boolean
   loading?: boolean

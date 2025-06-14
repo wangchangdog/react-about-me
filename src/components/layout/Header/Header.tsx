@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { ThemeToggle } from '../../ui/ThemeToggle/ThemeToggle'
 import './Header.css'
 
 export const Header = () => {
@@ -45,6 +46,9 @@ export const Header = () => {
                 </Link>
               </li>
             </ul>
+            <div className="header__actions">
+              <ThemeToggle />
+            </div>
           </nav>
 
           <button
