@@ -1,5 +1,5 @@
 import { useTheme } from '../../../hooks/useTheme'
-import styles from './ThemeToggle.module.css'
+import { cn } from '../../../utils/cn'
 
 export const ThemeToggle = () => {
   const { theme, resolvedTheme, setTheme } = useTheme()
@@ -38,19 +38,24 @@ export const ThemeToggle = () => {
   }
 
   return (
-    <div className={styles['theme-toggle']}>
+    <div className="flex items-center">
       <button
-        className={styles['theme-toggle__button']}
+        className="flex items-center gap-2 px-3 py-2 bg-gray-50 border border-gray-200 rounded-full cursor-pointer transition-all duration-base text-sm min-w-12 min-h-10 hover:bg-gray-100 hover:-translate-y-0.5 hover:shadow-md focus:outline-2 focus:outline-primary focus:outline-offset-2"
         onClick={handleToggle}
         aria-label={`現在: ${getLabel()}。クリックして切り替え`}
         title={getLabel()}
       >
-        <span className={styles['theme-toggle__icon']} role="img" aria-hidden="true">
+        <span className="text-lg leading-none flex items-center justify-center w-5 h-5" role="img" aria-hidden="true">
           {getIcon()}
         </span>
-        <span className={styles['theme-toggle__indicator']}>
+        <span className="flex items-center justify-center w-4 h-4 bg-gray-200 rounded-full relative overflow-hidden">
           <span
-            className={`${styles['theme-toggle__dot']} ${styles[`theme-toggle__dot--${resolvedTheme}`]}`}
+            className={cn(
+              "w-2 h-2 rounded-full transition-all duration-base",
+              resolvedTheme === 'light'
+                ? "bg-yellow-400 shadow-sm shadow-yellow-400/50"
+                : "bg-primary shadow-sm shadow-primary/50"
+            )}
           />
         </span>
       </button>

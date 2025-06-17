@@ -1,20 +1,19 @@
 import { Button } from '../../components/ui/Button/Button'
-import styles from './Home.module.css'
 
 export const Home = () => {
   return (
-    <div className={styles.home}>
+    <div>
       {/* Hero Section */}
-      <section className={styles.hero}>
-        <div className="container">
-          <div className={styles.hero__content}>
-            <h1 className={styles.hero__title}>
-              Hello, I'm <span className={styles['hero__title--highlight']}>Your Name</span>
+      <section className="py-20 bg-gradient-to-br from-primary to-secondary text-white text-center flex items-center min-h-[calc(100vh-80px)]">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto w-full px-4">
+            <h1 className="text-4xl font-bold leading-tight mb-6 md:text-5xl lg:text-6xl">
+              Hello, I'm <span className="text-secondary-light">Your Name</span>
             </h1>
-            <p className={styles.hero__subtitle}>
+            <p className="text-lg leading-relaxed mb-8 opacity-90 md:text-xl">
               フロントエンド開発者として、美しく機能的なWebサイトを制作しています。
             </p>
-            <div className={styles.hero__actions}>
+            <div className="flex gap-4 justify-center items-center flex-wrap mt-2 max-sm:flex-col max-sm:items-stretch max-sm:gap-3">
               <Button variant="gaming" size="lg" href="/portfolio">
                 ポートフォリオを見る
               </Button>
@@ -27,11 +26,11 @@ export const Home = () => {
       </section>
 
       {/* Introduction Section */}
-      <section className={styles.introduction}>
-        <div className="container">
-          <div className={styles.introduction__content}>
+      <section className="py-20 bg-gray-50">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center">
             <h2 className="section-title">About Me</h2>
-            <p className={styles.introduction__text}>
+            <p className="text-lg leading-relaxed text-gray-600 mb-8">
               React、TypeScript、CSS3を使用してモダンなWebアプリケーションを開発しています。
               ユーザーエクスペリエンスを重視し、アクセシブルで保守性の高いコードの記述を心がけています。
             </p>
@@ -43,20 +42,22 @@ export const Home = () => {
       </section>
 
       {/* Featured Works Section */}
-      <section className={styles['featured-works']}>
-        <div className="container">
+      <section className="py-20">
+        <div className="container-custom">
           <h2 className="section-title">Featured Works</h2>
-          <div className={styles['works-grid']}>
-            <div className={styles['work-card']}>
-              <div className={styles['work-card__image']}>
-                <div className={styles['work-card__placeholder']}>Project Image</div>
+          <div className="grid grid-cols-1 gap-8 mb-12 md:grid-cols-2 lg:grid-cols-3">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-base hover:-translate-y-1 hover:shadow-xl">
+              <div className="w-full h-48 overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-gray-500 font-medium">
+                  Project Image
+                </div>
               </div>
-              <div className={styles['work-card__content']}>
-                <h3 className={styles['work-card__title']}>プロジェクト 1</h3>
-                <p className={styles['work-card__description']}>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">プロジェクト 1</h3>
+                <p className="text-gray-600 leading-normal mb-4">
                   React + TypeScriptで構築したWebアプリケーション
                 </p>
-                <div className={styles['work-card__tags']}>
+                <div className="flex flex-wrap gap-2 mt-4">
                   <span className="tag">React</span>
                   <span className="tag">TypeScript</span>
                   <span className="tag">CSS3</span>
@@ -64,16 +65,18 @@ export const Home = () => {
               </div>
             </div>
 
-            <div className={styles['work-card']}>
-              <div className={styles['work-card__image']}>
-                <div className={styles['work-card__placeholder']}>Project Image</div>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-base hover:-translate-y-1 hover:shadow-xl">
+              <div className="w-full h-48 overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-gray-500 font-medium">
+                  Project Image
+                </div>
               </div>
-              <div className={styles['work-card__content']}>
-                <h3 className={styles['work-card__title']}>プロジェクト 2</h3>
-                <p className={styles['work-card__description']}>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">プロジェクト 2</h3>
+                <p className="text-gray-600 leading-normal mb-4">
                   レスポンシブデザインを活用したポートフォリオサイト
                 </p>
-                <div className={styles['work-card__tags']}>
+                <div className="flex flex-wrap gap-2 mt-4">
                   <span className="tag">HTML5</span>
                   <span className="tag">CSS3</span>
                   <span className="tag">JavaScript</span>
@@ -81,16 +84,18 @@ export const Home = () => {
               </div>
             </div>
 
-            <div className={styles['work-card']}>
-              <div className={styles['work-card__image']}>
-                <div className={styles['work-card__placeholder']}>Project Image</div>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-base hover:-translate-y-1 hover:shadow-xl">
+              <div className="w-full h-48 overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-gray-500 font-medium">
+                  Project Image
+                </div>
               </div>
-              <div className={styles['work-card__content']}>
-                <h3 className={styles['work-card__title']}>プロジェクト 3</h3>
-                <p className={styles['work-card__description']}>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">プロジェクト 3</h3>
+                <p className="text-gray-600 leading-normal mb-4">
                   Vite + Reactを使用した高速なWebアプリケーション
                 </p>
-                <div className={styles['work-card__tags']}>
+                <div className="flex flex-wrap gap-2 mt-4">
                   <span className="tag">Vite</span>
                   <span className="tag">React</span>
                   <span className="tag">CSS Modules</span>
@@ -98,7 +103,7 @@ export const Home = () => {
               </div>
             </div>
           </div>
-          <div className={styles['featured-works__action']}>
+          <div className="text-center">
             <Button variant="primary" href="/portfolio">
               すべてのプロジェクトを見る
             </Button>

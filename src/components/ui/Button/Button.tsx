@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import styles from './Button.module.css'
+import { cn } from '../../../utils/cn'
 
 interface ButtonProps {
   children: React.ReactNode
@@ -25,28 +25,49 @@ export const Button: React.FC<ButtonProps> = ({
   type = 'button',
   className = '',
 }) => {
-  const baseClasses = styles.button
-  const variantClass = styles[`button--${variant}`] || ''
-  const sizeClass = styles[`button--${size}`] || ''
-  const disabledClass = disabled || loading ? styles['button--disabled'] || '' : ''
-  const loadingClass = loading ? styles['button--loading'] || '' : ''
+  // ベースクラス
+  const baseClasses = 'inline-flex items-center justify-center gap-2 font-primary font-medium no-underline border-2 border-transparent rounded-md cursor-pointer transition-all duration-base relative overflow-hidden focus:outline-2 focus:outline-primary focus:outline-offset-2'
 
-  const classes = [
+  // バリアントクラス
+  const variantClasses = {
+    primary: 'bg-primary text-white border-primary hover:bg-primary-dark hover:border-primary-dark hover:-translate-y-0.5 hover:shadow-md',
+    secondary: 'bg-secondary text-white border-secondary hover:bg-secondary-dark hover:border-secondary-dark hover:-translate-y-0.5 hover:shadow-md',
+    outline: 'bg-transparent text-primary border-primary hover:bg-primary hover:text-white hover:-translate-y-0.5 hover:shadow-md',
+    ghost: 'bg-transparent text-primary border-transparent hover:bg-gray-100 hover:-translate-y-0.5',
+    gaming: 'gaming-button text-white',
+    'gaming-glow': 'gaming-button text-white'
+  }
+
+  // サイズクラス
+  const sizeClasses = {
+    sm: 'px-4 py-2 text-sm min-h-[36px]',
+    md: 'px-6 py-3 text-base min-h-[44px]',
+    lg: 'px-8 py-4 text-lg min-h-[52px]'
+  }
+
+  // 無効化クラス
+  const disabledClasses = disabled || loading ? 'opacity-60 cursor-not-allowed pointer-events-none' : ''
+
+  // ローディングクラス
+  const loadingClasses = loading ? 'pointer-events-none' : ''
+
+  const classes = cn(
     baseClasses,
-    variantClass,
-    sizeClass,
-    variant === 'gaming' && styles['gaming-button'],
-    disabledClass,
-    loadingClass,
+    variantClasses[variant],
+    sizeClasses[size],
+    disabledClasses,
+    loadingClasses,
     className
-  ].filter(Boolean).join(' ')
+  )
 
   const buttonContent = (
     <>
-      {loading && <span className={styles.button__spinner}></span>}
-      <span className={`${styles.button__content} ${loading ? styles['button__content--hidden'] : ''}`}>
-        {variant === 'gaming' ? (
-          <span className={styles.button__text}>
+      {loading && (
+        <span className="absolute w-4 h-4 border-2 border-transparent border-t-current rounded-full animate-spin"></span>
+      )}
+      <span className={`flex items-center justify-center gap-2 ${loading ? 'opacity-0' : ''}`}>
+        {variant === 'gaming' || variant === 'gaming-glow' ? (
+          <span className="bg-gradient-to-r from-pink-500 via-cyan-500 to-yellow-500 bg-clip-text text-transparent bg-[length:200%_200%] animate-gradient-x font-semibold relative">
             {children}
           </span>
         ) : (
