@@ -12,7 +12,7 @@ import './styles/variables.css'
 
 function App() {
   return (
-    <Router>
+    <Router basename='/react-about-me'>
       <div className="w-screen min-h-screen flex flex-col" style={{ '--header-height': '80px' } as React.CSSProperties}>
         <Header />
         <main className="flex-1 pt-20">

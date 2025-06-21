@@ -52,3 +52,55 @@ export default tseslint.config({
   },
 })
 ```
+
+## GitHub Pages デプロイ
+
+このプロジェクトはGitHub Actionsを使用してGitHub Pagesに自動デプロイされるように設定されています。
+
+### 初回設定
+
+1. GitHubリポジトリの **Settings** タブに移動
+2. 左側のメニューから **Pages** を選択
+3. **Source** を **GitHub Actions** に設定
+4. **Build and deployment** で **GitHub Actions** を選択
+
+### デプロイ
+
+`main`ブランチにプッシュすると、自動的にGitHub Pagesにデプロイされます。
+
+```bash
+git add .
+git commit -m "Update website"
+git push origin main
+```
+
+### 設定ファイル
+
+- `.github/workflows/deploy.yml` - GitHub Actionsワークフローファイル
+- `vite.config.ts` - GitHub Pages用のbase設定
+- `public/404.html` - SPAのルーティング対応
+
+### アクセスURL
+
+デプロイ後のサイトURL: `https://ユーザー名.github.io/react-about-me/`
+
+## 開発
+
+### ローカル開発
+
+```bash
+npm install
+npm run dev
+```
+
+### ビルド
+
+```bash
+npm run build
+```
+
+### プレビュー
+
+```bash
+npm run preview
+```
