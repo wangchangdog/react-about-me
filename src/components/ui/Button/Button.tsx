@@ -12,6 +12,8 @@ interface ButtonProps {
   onClick?: () => void
   type?: 'button' | 'submit' | 'reset'
   className?: string
+  'aria-label'?: string
+  'aria-describedby'?: string
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -24,6 +26,8 @@ export const Button: React.FC<ButtonProps> = ({
   onClick,
   type = 'button',
   className = '',
+  'aria-label': ariaLabel,
+  'aria-describedby': ariaDescribedby,
 }) => {
   // ベースクラス
   const baseClasses = 'inline-flex items-center justify-center gap-2 font-primary font-medium no-underline border-2 border-transparent rounded-md cursor-pointer transition-all duration-base relative overflow-hidden focus:outline-2 focus:outline-primary focus:outline-offset-2'
@@ -85,13 +89,20 @@ export const Button: React.FC<ButtonProps> = ({
           className={classes}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={ariaLabel}
+          aria-describedby={ariaDescribedby}
         >
           {buttonContent}
         </a>
       )
     } else {
       return (
-        <Link to={href} className={classes}>
+        <Link
+          to={href}
+          className={classes}
+          aria-label={ariaLabel}
+          aria-describedby={ariaDescribedby}
+        >
           {buttonContent}
         </Link>
       )
@@ -104,6 +115,8 @@ export const Button: React.FC<ButtonProps> = ({
       className={classes}
       disabled={disabled || loading}
       onClick={onClick}
+      aria-label={ariaLabel}
+      aria-describedby={ariaDescribedby}
     >
       {buttonContent}
     </button>

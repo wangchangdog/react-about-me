@@ -45,7 +45,7 @@
 
 	.gaming-button::before {
 		content: "";
-		@apply absolute -inset-0.5 animate-gaming-border rounded-md -z-10;
+		@apply absolute -inset-0.5 rounded-md -z-10;
 		background: conic-gradient(
 			from 0deg,
 			#ff0000,
@@ -62,6 +62,7 @@
 			#ff007f,
 			#ff0000
 		);
+		animation: gaming-border 4s linear infinite;
 	}
 
 	.gaming-button::after {
@@ -124,6 +125,25 @@
 		to {
 			opacity: 1;
 			transform: translateY(0);
+		}
+	}
+
+	@keyframes gaming-border {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+
+	@keyframes gradient-x {
+		0%,
+		100% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
 		}
 	}
 }

@@ -40,7 +40,7 @@ export const ThemeToggle = () => {
   return (
     <div className="flex items-center">
       <button
-        className="flex items-center gap-2 px-3 py-2 bg-gray-50 border border-gray-200 rounded-full cursor-pointer transition-all duration-base text-sm min-w-12 min-h-10 hover:bg-gray-100 hover:-translate-y-0.5 hover:shadow-md focus:outline-2 focus:outline-primary focus:outline-offset-2"
+        className="flex items-center gap-2 px-3 py-2 bg-theme-card-bg border border-theme-card-border rounded-full cursor-pointer transition-all duration-base text-sm min-w-12 min-h-10 hover:bg-theme-bg-tertiary hover:-translate-y-0.5 hover:shadow-md focus:outline-2 focus:outline-primary focus:outline-offset-2"
         onClick={handleToggle}
         aria-label={`現在: ${getLabel()}。クリックして切り替え`}
         title={getLabel()}
@@ -48,7 +48,7 @@ export const ThemeToggle = () => {
         <span className="text-lg leading-none flex items-center justify-center w-5 h-5" role="img" aria-hidden="true">
           {getIcon()}
         </span>
-        <span className="flex items-center justify-center w-4 h-4 bg-gray-200 rounded-full relative overflow-hidden">
+        <span className="flex items-center justify-center w-4 h-4 bg-theme-bg-tertiary rounded-full relative overflow-hidden">
           <span
             className={cn(
               "w-2 h-2 rounded-full transition-all duration-base",

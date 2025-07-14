@@ -26,11 +26,11 @@ export const Home = () => {
       </section>
 
       {/* Introduction Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-theme-bg-secondary">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="section-title">About Me</h2>
-            <p className="text-lg leading-relaxed text-gray-600 mb-8">
+            <h2 className="section-title text-theme-text-primary">About Me</h2>
+            <p className="text-lg leading-relaxed text-theme-text-secondary mb-8">
               React、TypeScript、CSS3を使用してモダンなWebアプリケーションを開発しています。
               ユーザーエクスペリエンスを重視し、アクセシブルで保守性の高いコードの記述を心がけています。
             </p>
@@ -44,17 +44,17 @@ export const Home = () => {
       {/* Featured Works Section */}
       <section className="py-20">
         <div className="container-custom">
-          <h2 className="section-title">Featured Works</h2>
+          <h2 className="section-title text-theme-text-primary">Featured Works</h2>
           <div className="grid grid-cols-1 gap-8 mb-12 md:grid-cols-2 lg:grid-cols-3">
-            <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-base hover:-translate-y-1 hover:shadow-xl">
+            <div className="bg-theme-card-bg rounded-lg shadow-theme-card-shadow border border-theme-card-border overflow-hidden transition-all duration-base hover:-translate-y-1 hover:shadow-lg">
               <div className="w-full h-48 overflow-hidden">
                 <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-gray-500 font-medium">
                   Project Image
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">プロジェクト 1</h3>
-                <p className="text-gray-600 leading-normal mb-4">
+                <h3 className="text-xl font-semibold text-theme-text-primary mb-3">プロジェクト 1</h3>
+                <p className="text-theme-text-secondary leading-normal mb-4">
                   React + TypeScriptで構築したWebアプリケーション
                 </p>
                 <div className="flex flex-wrap gap-2 mt-4">
@@ -65,15 +65,15 @@ export const Home = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-base hover:-translate-y-1 hover:shadow-xl">
+            <div className="bg-theme-card-bg rounded-lg shadow-theme-card-shadow border border-theme-card-border overflow-hidden transition-all duration-base hover:-translate-y-1 hover:shadow-lg">
               <div className="w-full h-48 overflow-hidden">
                 <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-gray-500 font-medium">
                   Project Image
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">プロジェクト 2</h3>
-                <p className="text-gray-600 leading-normal mb-4">
+                <h3 className="text-xl font-semibold text-theme-text-primary mb-3">プロジェクト 2</h3>
+                <p className="text-theme-text-secondary leading-normal mb-4">
                   レスポンシブデザインを活用したポートフォリオサイト
                 </p>
                 <div className="flex flex-wrap gap-2 mt-4">
@@ -84,15 +84,15 @@ export const Home = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-base hover:-translate-y-1 hover:shadow-xl">
+            <div className="bg-theme-card-bg rounded-lg shadow-theme-card-shadow border border-theme-card-border overflow-hidden transition-all duration-base hover:-translate-y-1 hover:shadow-lg">
               <div className="w-full h-48 overflow-hidden">
                 <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-gray-500 font-medium">
                   Project Image
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">プロジェクト 3</h3>
-                <p className="text-gray-600 leading-normal mb-4">
+                <h3 className="text-xl font-semibold text-theme-text-primary mb-3">プロジェクト 3</h3>
+                <p className="text-theme-text-secondary leading-normal mb-4">
                   Vite + Reactを使用した高速なWebアプリケーション
                 </p>
                 <div className="flex flex-wrap gap-2 mt-4">

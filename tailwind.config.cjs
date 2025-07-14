@@ -22,6 +22,25 @@ module.exports = {
         warning: '#f59e0b',
         error: '#ef4444',
         info: '#3b82f6',
+        // テーマ変数
+        'theme-bg-primary': 'var(--theme-bg-primary)',
+        'theme-bg-secondary': 'var(--theme-bg-secondary)',
+        'theme-bg-tertiary': 'var(--theme-bg-tertiary)',
+        'theme-text-primary': 'var(--theme-text-primary)',
+        'theme-text-secondary': 'var(--theme-text-secondary)',
+        'theme-text-tertiary': 'var(--theme-text-tertiary)',
+        'theme-border-primary': 'var(--theme-border-primary)',
+        'theme-border-secondary': 'var(--theme-border-secondary)',
+        'theme-card-bg': 'var(--theme-card-bg)',
+        'theme-card-border': 'var(--theme-card-border)',
+        'theme-nav-bg': 'var(--theme-nav-bg)',
+        'theme-nav-border': 'var(--theme-nav-border)',
+        'theme-nav-link': 'var(--theme-nav-link)',
+        'theme-nav-link-hover': 'var(--theme-nav-link-hover)',
+        'theme-nav-link-active': 'var(--theme-nav-link-active)',
+        'theme-input-bg': 'var(--theme-input-bg)',
+        'theme-input-border': 'var(--theme-input-border)',
+        'theme-input-focus-border': 'var(--theme-input-focus-border)',
       },
       
       // フォントファミリー
@@ -85,6 +104,7 @@ module.exports = {
         'lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
         'xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
         '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+        'theme-card-shadow': 'var(--theme-card-shadow)',
       },
       
       // トランジション
