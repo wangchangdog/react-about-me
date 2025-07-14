@@ -8,7 +8,7 @@ export const Home = () => {
         <div className="container-custom">
           <div className="max-w-4xl mx-auto w-full px-4">
             <h1 className="text-4xl font-bold leading-tight mb-6 md:text-5xl lg:text-6xl">
-              Hello, I'm <span className="text-secondary-light">Your Name</span>
+              Hi, I'm <span className="text-secondary-light">Your Name</span>
             </h1>
             <p className="text-lg leading-relaxed mb-8 opacity-90 md:text-xl">
               フロントエンド開発者として、美しく機能的なWebサイトを制作しています。
