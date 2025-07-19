@@ -37,7 +37,7 @@ export const Button: React.FC<ButtonProps> = ({
     primary: 'bg-primary text-white border-primary hover:bg-primary-dark hover:border-primary-dark hover:-translate-y-0.5 hover:shadow-md',
     secondary: 'bg-secondary text-white border-secondary hover:bg-secondary-dark hover:border-secondary-dark hover:-translate-y-0.5 hover:shadow-md',
     outline: 'bg-transparent text-primary border-primary hover:bg-primary hover:text-white hover:-translate-y-0.5 hover:shadow-md',
-    ghost: 'bg-transparent text-primary border-transparent hover:bg-gray-100 hover:-translate-y-0.5',
+    ghost: 'bg-transparent text-theme-text-primary border-transparent hover:bg-theme-bg-secondary hover:-translate-y-0.5',
     gaming: 'gaming-button text-white',
     'gaming-glow': 'gaming-button text-white'
   }

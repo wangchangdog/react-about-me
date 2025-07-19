@@ -40,7 +40,20 @@
 
 	/* ゲームボタン用のカスタムスタイル */
 	.gaming-button {
-		@apply relative bg-gradient-to-r from-gray-900 to-gray-800 text-white border-2 border-transparent overflow-hidden;
+		@apply relative border-2 border-transparent overflow-hidden;
+		background: linear-gradient(135deg, #1f2937, #374151);
+		color: white;
+		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	}
+
+	/* ライトモード専用のゲーミングボタン */
+	[data-theme="light"] .gaming-button {
+		background: linear-gradient(135deg, #374151, #4b5563);
+	}
+
+	/* ダークモード専用のゲーミングボタン */
+	[data-theme="dark"] .gaming-button {
+		background: linear-gradient(135deg, #1f2937, #374151);
 	}
 
 	.gaming-button::before {
@@ -67,7 +80,18 @@
 
 	.gaming-button::after {
 		content: "";
-		@apply absolute inset-0.5 bg-gradient-to-r from-gray-900 to-gray-800 rounded-sm -z-10;
+		@apply absolute inset-0.5 rounded-sm -z-10;
+		background: linear-gradient(135deg, #1f2937, #374151);
+	}
+
+	/* ライトモード専用 */
+	[data-theme="light"] .gaming-button::after {
+		background: linear-gradient(135deg, #374151, #4b5563);
+	}
+
+	/* ダークモード専用 */
+	[data-theme="dark"] .gaming-button::after {
+		background: linear-gradient(135deg, #1f2937, #374151);
 	}
 
 	.gaming-button:hover::before {
