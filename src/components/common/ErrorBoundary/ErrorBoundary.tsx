@@ -65,7 +65,7 @@ export class ErrorBoundary extends Component<Props, State> {
                 ページを再読み込み
               </Button>
             </div>
-            {process.env.NODE_ENV === 'development' && this.state.error && (
+            {(import.meta.env.MODE === 'development' || import.meta.env.DEV) && this.state.error && (
               <details className="mt-6 text-left">
                 <summary className="cursor-pointer text-theme-text-secondary hover:text-theme-text-primary">
                   エラー詳細（開発モード）
